@@ -24,7 +24,7 @@ class List extends Component {
 
   render() {
     return (
-      <div>
+      <div className='list-block'>
         <h1>学员列表</h1>
         <div className='list'>
           {this.state.students.map((person) => 
@@ -32,8 +32,8 @@ class List extends Component {
             {person.id}.{person.name}
           </div>
           )}
+          <input type="text" placeholder="+添加学员"/>
         </div>
-        <input type="text" placeholder="+添加学员"/>
       </div>
     );
   }
