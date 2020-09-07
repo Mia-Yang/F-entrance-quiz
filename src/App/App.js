@@ -6,7 +6,7 @@ import Result from './components/Result/result';
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className='App'>
         <Result />
         <List />
       </div>
