@@ -5,7 +5,8 @@ class List extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      students: []
+      students: [],
+      inputName:''
     }
   }
 
@@ -22,6 +23,31 @@ class List extends Component {
       })
   }
 
+  handleChange = (e) => {
+    this.setState({
+      inputName: e.target.value
+    })
+  }
+
+  handleAddPerson = () => {
+      fetch('http://localhost:8080/list', { 
+        method: 'POST',
+        body: this.state.inputName
+      })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        this.setState({
+          students: data,
+          inputName: ''
+        })
+      })
+      .catch(error => {
+        console.error(error)
+      })
+  }
+
   render() {
     return (
       <div className='list-block'>
@@ -32,7 +58,8 @@ class List extends Component {
             {person.id}.{person.name}
           </div>
           )}
-          <input type="text" placeholder="+添加学员"/>
+          <input type="text" placeholder="+添加学员" /* onKeyDown={this.handleAddPerson} */ 
+          onChange={this.handleChange} value={this.state.name}/>
         </div>
       </div>
     );
