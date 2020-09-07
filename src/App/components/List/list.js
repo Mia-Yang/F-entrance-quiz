@@ -6,7 +6,7 @@ class List extends Component {
     return (
       <div>
         <h1>学员列表</h1>
-        <button>+添加学员</button>
+        <input type="text" placeholder={"+添加学员"}/>
       </div>
     );
   }

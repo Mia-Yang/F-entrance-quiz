@@ -6,7 +6,7 @@ class Result extends Component {
     return (
       <div>
         <h1>分组列表</h1>
-
+        <button>分组学员</button>
       </div>
     );
   }
