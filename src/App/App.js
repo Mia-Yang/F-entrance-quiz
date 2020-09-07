@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import './App.scss';
+import List from './components/List/list'
+import Result from './components/Result/result';
 
 class App extends Component {
   render() {
     return (
-      <div data-testid="app" className="App">
-        Hello World
+      <div>
+        <Result />
+        <List />
       </div>
     );
   }
